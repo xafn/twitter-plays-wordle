@@ -33,7 +33,7 @@ with open('replies.csv', 'w') as f:
         text = text.replace('\n', ' ')
         text = text.lower()
         row = {'ID': tweet.id_str, 'TEXT': text, 'LIKES': tweet.favorite_count}
-        if '\[' and ']' in text or len(text) == 5:
+        if '\[' and ']' in text or len(text) == 5: #i see you @ThatOneCalculator this ones for you
             csv_writer.writerow(row)
     
 df = pandas.read_csv('replies.csv')
