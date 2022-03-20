@@ -35,7 +35,7 @@ with open('replies.csv', 'w') as f:
         row = {'ID': tweet.id_str, 'TEXT': text, 'LIKES': tweet.favorite_count}
         if '\[' and ']' in text or len(text) == 5:
             csv_writer.writerow(row)
-
+    
 df = pandas.read_csv('replies.csv')
 df = df.sort_values('LIKES', ascending=False)
 df.to_csv('replies.csv', index=False)  
@@ -43,21 +43,17 @@ df.to_csv('replies.csv', index=False)
 df2 = pandas.read_csv('counter.csv')
 
 if df2.at[0,'CURRENT_ROW'] == 7 or df2.at[0,'CURRENT_ROW'] == 0 or not bool(df2.at[0,'NOT_WIN']):
-    api.update_status(str(start(current_row)))
+    api.update_status(str(start()))
 
 else:
-    counter = 0
-    for content in df['TEXT']:
+    for i,content in enumerate(df['TEXT']):
         bracketless = re.search(r"\[([A-Za-z0-9_]+)\]", content)
         if bracketless:
-            df.at[counter, 'TEXT'] = bracketless.group(1)
-            counter +=1
+            df.at[i, 'TEXT'] = bracketless.group(1)
     df.to_csv('replies.csv', index=False)  
 
-    for i,content in enumerate(df['TEXT']): 
-            guess = df.iat[i,1]
-            api.update_status(status = 'thanks', in_reply_to_status_id = df.iat[i,0] , auto_populate_reply_metadata=True)
-            break
+    guess = df.iat[i,1]
+    api.update_status(status = 'thanks', in_reply_to_status_id = df.iat[i,0] , auto_populate_reply_metadata=True)
 
     if 'guess' not in globals():
         guess = random.choice(guess_list)
