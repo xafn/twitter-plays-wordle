@@ -1,3 +1,3 @@
 # Twitter Plays Wordle
 
-shitty code for a shitty bot
+shitty code for a shitty bot 
