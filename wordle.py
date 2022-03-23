@@ -7,7 +7,6 @@ word_num = df2.iat[0,1]
 win = bool(df2.iat[0,2])
 guess_list = open('available_words.txt').read().splitlines()
 correct_word = (open('words_list.txt').read().splitlines())[word_num-1]
-row = "⬛⬛⬛⬛⬛"
 wordle_grid = []
 
 #add whatevers in wordle_grid.txt to wordle_grid variable as a list
