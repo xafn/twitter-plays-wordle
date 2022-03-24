@@ -2,11 +2,11 @@
 
 ![profile picture](https://pbs.twimg.com/profile_images/1503925008288133126/14hJBQ9k_200x200.jpg)
 
-Twitter bot that plays Wordle through replies. Reply to the tweet with a guess in square brackets, and the most liked response will be used as the next guess.
-
 <a href="https://twitter.com/wordlegame_bot">
       <img src="https://img.shields.io/badge/Twitter-%40WordleGame__Bot-blue" alt="Twitter">
 </a>
+
+Twitter bot that plays Wordle through replies. Reply to the tweet with a guess in square brackets, and the most liked response will be used as the next guess.
 
 ***
 
