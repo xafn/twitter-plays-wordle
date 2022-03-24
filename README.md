@@ -4,8 +4,9 @@
 
 Twitter bot that plays Wordle through replies. Reply to the tweet with a guess in square brackets, and the most liked response will be used as the next guess.
 
-**Link:**
-**https://twitter.com/WordleGame_Bot**
+<a href="https://discord.gg/etJNHCQ">
+      <img src="https://img.shields.io/badge/Twitter-%40WordleGame__Bot-blue" alt="Twitter">
+</a>
 
 ***
 
