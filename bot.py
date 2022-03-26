@@ -71,3 +71,5 @@ def run():
         api.update_status(status = 'thanks', in_reply_to_status_id = df.iat[i,0] , auto_populate_reply_metadata=True)
 
     api.update_status(str(wordle.main(guess, wordle.current_row, wordle.win, wordle.wordle_grid, wordle.correct_word, wordle.word_num)))
+
+run()
