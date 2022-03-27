@@ -14,5 +14,5 @@ Twitter bot that plays Wordle through replies. Reply to the tweet with a guess i
 **To-do:**
  - [ ] **self-host on my laptop 🚨**
  - [ ] use most frequent word reply as the guess instead of most liked reply
- - [ ] optimise code, get good
+ - [x] optimise code, get good
  - [ ] clean up repository and folder structure
