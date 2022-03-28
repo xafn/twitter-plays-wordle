@@ -18,6 +18,5 @@
 
 **To-do:**
  - [ ] **self-host on my laptop 🚨**
- - [ ] use most frequent word reply as the guess instead of most liked reply
  - [x] optimise code, get good
  - [ ] clean up repository and folder structure
