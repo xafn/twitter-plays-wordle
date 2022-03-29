@@ -17,6 +17,6 @@
 ***
 
 **To-do:**
- - [ ] **self-host on my laptop 🚨**
+ - [x] **self-host on my laptop 🚨**
  - [x] optimise code, get good
  - [ ] clean up repository and folder structure
