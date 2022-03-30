@@ -4,7 +4,7 @@ import replies
 import wordle
 
 guess_list = open('available_words.txt').read().splitlines()
-clear = lambda: os.system('clear')
+clear = lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
 
 if __name__ == "__main__":
     while True:
