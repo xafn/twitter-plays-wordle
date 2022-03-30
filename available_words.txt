@@ -3298,6 +3298,7 @@ educe
 educt
 eejit
 eensy
+eerie
 eeven
 eevns
 effed
@@ -3590,6 +3591,7 @@ fakie
 fakir
 falaj
 falls
+false
 famed
 fames
 fanal
@@ -4815,6 +4817,7 @@ haily
 hains
 haint
 hairs
+hairy
 haith
 hajes
 hajis
