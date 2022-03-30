@@ -25,7 +25,7 @@ def get_replies():
 
 def filter_guesses_from_replies():
     replies = get_replies()
-    with open('replies.csv', 'w') as f:
+    with open('replies.csv', 'w', encoding = "utf-8") as f:
         csv_writer = csv.DictWriter(f, fieldnames=('ID', 'TEXT', 'LIKES'))
         csv_writer.writeheader()
 
@@ -40,7 +40,7 @@ def filter_guesses_from_replies():
 
 
 def read_csv_as_dataframe():
-    return pandas.read_csv('replies.csv', encoding= 'unicode_escape')
+    return pandas.read_csv('replies.csv', encoding = "utf-8")
 
 
 def remove_brackets():
