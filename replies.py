@@ -32,6 +32,7 @@ def filter_guesses_from_replies():
         for tweet in replies:
             text = tweet.text.replace('@WordleGame_Bot ', '')
             text = text.replace('\n', ' ')
+            text = text.replace(',' ,  '')
             text = text.lower()
             row = {'ID': tweet.id_str, 'TEXT': text, 'LIKES': tweet.favorite_count}
             if '\[' and ']' in text or len(text) == 5:
@@ -39,7 +40,7 @@ def filter_guesses_from_replies():
 
 
 def read_csv_as_dataframe():
-    return pandas.read_csv('replies.csv')
+    return pandas.read_csv('replies.csv', encoding= 'unicode_escape')
 
 
 def remove_brackets():
