@@ -377,6 +377,7 @@ chime
 china
 chirp
 chock
+chode
 choir
 choke
 chord
