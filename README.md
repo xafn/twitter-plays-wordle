@@ -17,6 +17,7 @@
 ***
 
 **To-do:**
- - [x] **self-host on my laptop 🚨**
- - [x] optimise code, get good
  - [ ] clean up repository and folder structure
+ - [ ] add instructions on how to install to readme
+ - [x] self-host on my laptop 🚨
+ - [x] optimise code, get good
