@@ -1,4 +1,7 @@
-import time, pandas, random, os
+import time
+import pandas
+import random
+import os
 import credentials as crds
 import replies
 import wordle
