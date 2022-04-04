@@ -15,7 +15,7 @@ def start(word_num):
     result += "Reply with a valid guess\n"
     result += ("\n⬛⬛⬛⬛⬛\n")*(6)
 
-    return(result)
+    return result
 
 
 def get_wordle_grid():
@@ -85,4 +85,4 @@ def main(guess, current_row, wordle_grid, correct_word, word_num):
     df2.at[0, 'CURRENT_ROW'] += 1
     df2.to_csv('counter.csv', index=False)
     
-    return(result)
+    return result
