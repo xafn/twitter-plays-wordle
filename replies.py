@@ -4,18 +4,19 @@ import tweepy
 import re
 import credentials as crds
 
+name = 'WordleGame_Bot'
+
 
 def get_recent_tweet_id():
-    name = 'WordleGame_Bot'
     tweets_list= crds.api.user_timeline(screen_name=name, count=1, exclude_replies=True)
     recent_tweet = tweets_list[0]
     tweet_id = recent_tweet.id_str
 
-    return tweet_id, name
+    return tweet_id
 
 
 def get_replies():
-    tweet_id, name = get_recent_tweet_id()
+    tweet_id = get_recent_tweet_id()
     replies = []
 
     for tweet in tweepy.Cursor(crds.api.search_tweets,q='to:'+name, result_type='recent').items(1000):
@@ -33,9 +34,8 @@ def filter_guesses_from_replies():
         csv_writer.writeheader()
 
         for tweet in replies:
-            text = tweet.text.replace('@WordleGame_Bot ', '')
+            text = tweet.text.replace(f'@{name} ', '')
             text = text.replace('\n', ' ')
-            text = text.replace(',' ,  '')
             text = text.lower()
             row = {'ID': tweet.id_str, 'TEXT': text, 'LIKES': tweet.favorite_count}
             if '\[' and ']' in text or len(text) == 5:
