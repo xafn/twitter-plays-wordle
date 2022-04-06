@@ -72,8 +72,8 @@ def main(guess, current_row, wordle_grid, correct_word, word_num):
         df2.at[0, 'WORD_NUM'] += 1
 
     elif current_row == 6 and guess != correct_word:
-        result += f'\nThe word was "{correct_word}"'
         result = result.replace('Reply with a valid guess\n', '')
+        result += f'\nThe word was "{correct_word}"'
         
         df2.at[0, 'WORD_NUM'] += 1
     
