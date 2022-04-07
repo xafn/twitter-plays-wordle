@@ -8,7 +8,7 @@ def start(word_num):
     df2.at[0,'WIN'] = 'False'
     df2.to_csv('counter.csv', index=False) 
 
-    with open("wordle_grid.txt", "w") as f:
+    with open("wordle_grid.txt", "w", encoding = "utf-8") as f:
         f.write("")
     
     result = f"Twitter Plays #Wordle #{word_num}\n"
@@ -19,7 +19,7 @@ def start(word_num):
 
 
 def get_wordle_grid():
-    with open("wordle_grid.txt", "r") as f:
+    with open("wordle_grid.txt", "r", encoding = "utf-8") as f:
         for i in f:
             wordle_grid.append(i)
 
@@ -34,11 +34,11 @@ def colour(guess, wordle_grid, correct_word):
             correct = 0
             occur = 0
 
-            for j in range(len(correct_word)):
+            for j in range((len(correct_word))-1):
                 if guess[i] == guess[j]:
                     if j <= i:
                         occur += 1
-                    if guess[i] == correct_word[j]:
+                    elif guess[i] == correct_word[j]:
                         correct += 1
 
             if target - correct - occur >= 0:
@@ -63,6 +63,10 @@ def main(guess, current_row, wordle_grid, correct_word, word_num):
     result += "\n"+"".join(wordle_grid)+"\n"
     result += ("\n⬛⬛⬛⬛⬛\n")*(6-current_row)
 
+    with open("wordle_grid.txt", "w", encoding = "utf-8") as f:
+        for i in wordle_grid:
+            f.write(i)
+
     if guess == correct_word:
         win_message = ["Genius","Magnificent","Impressive","Splendid","Great","Phew"]
         result = result.replace('Reply with a valid guess\n', '')
@@ -76,11 +80,6 @@ def main(guess, current_row, wordle_grid, correct_word, word_num):
         result += f'\nThe word was "{correct_word}"'
         
         df2.at[0, 'WORD_NUM'] += 1
-    
-    else:
-        with open("wordle_grid.txt", "w") as f:
-            for i in wordle_grid:
-                f.write(i)
 
     df2.at[0, 'CURRENT_ROW'] += 1
     df2.to_csv('counter.csv', index=False)
