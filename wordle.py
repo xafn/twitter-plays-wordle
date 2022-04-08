@@ -34,7 +34,7 @@ def colour(guess, wordle_grid, correct_word):
             correct = 0
             occur = 0
 
-            for j in range((len(correct_word))-1):
+            for j in range(len(correct_word)):
                 if guess[i] == guess[j]:
                     if j <= i:
                         occur += 1
