@@ -16,6 +16,7 @@ def run():
         word_num = df2.iat[0,1]
         win = bool(df2.iat[0,2])
         correct_word = (open('words_list.txt').read().splitlines())[word_num-1]
+        wordle.wordle_grid = []
 
         if current_row == 7 or current_row == 0 or win:
             crds.api.update_status(wordle.start(word_num))
