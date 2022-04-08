@@ -54,13 +54,14 @@ def colour(guess, wordle_grid, correct_word):
 
 
 def main(guess, current_row, wordle_grid, correct_word, word_num):
+    wordle_grid = []
     get_wordle_grid()
     wordle_grid.append("   ".join(guess.upper())+"\n")
     colour(guess, wordle_grid, correct_word)
         
     result = f"Twitter Plays #Wordle #{word_num}\n"
     result += "Reply with a valid guess\n"
-    result += "\n"+"".join(wordle_grid)+"\n"
+    result += f'\n{"".join(wordle_grid)}\n'
     result += ("\n⬛⬛⬛⬛⬛\n")*(6-current_row)
 
     with open("wordle_grid.txt", "w", encoding = "utf-8") as f:
