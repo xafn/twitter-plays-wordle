@@ -54,7 +54,6 @@ def colour(guess, wordle_grid, correct_word):
 
 
 def main(guess, current_row, wordle_grid, correct_word, word_num):
-    wordle_grid = []
     get_wordle_grid()
     wordle_grid.append("   ".join(guess.upper())+"\n")
     colour(guess, wordle_grid, correct_word)
