@@ -27,7 +27,7 @@ def run():
             try:
                 guess, guess_id = replies.get_guess(guess_list)
                 crds.api.update_status(status = 'thanks', in_reply_to_status_id = guess_id, auto_populate_reply_metadata=True)
-            except UnboundLocalError:
+            except (UnboundLocalError, AttributeError) as e:
                 guess = random.choice(guess_list)
             
             crds.api.update_status(wordle.main(guess, current_row, wordle.wordle_grid, correct_word, word_num))
