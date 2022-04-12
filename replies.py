@@ -50,8 +50,11 @@ def remove_brackets():
     df = read_csv_as_dataframe()
     for i,content in enumerate(df['TEXT']):
         if "\[" and "]" in content:
-            bracketless = re.search(r"\[([A-Za-z0-9_]+)\]", content).group(1)
-            df.at[i,'TEXT'] = bracketless
+            try:
+                bracketless = re.search(r"\[([A-Za-z0-9_]+)\]", content).group(1)
+                df.at[i,'TEXT'] = bracketless
+            except AttributeError:
+                pass
     df.to_csv('replies.csv', index=False)
 
 
